@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Mail, Instagram, Twitter, Facebook, Github } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -19,17 +19,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
             <div className="flex flex-col space-y-2">
-              <a href="https://instagram.com/smartcity" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-200 hover:text-white transition duration-300">
-                <Instagram size={20} className="mr-2" />
-                <span>@smartcity</span>
-              </a>
-              <a href="https://twitter.com/smartcity" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-200 hover:text-white transition duration-300">
-                <Twitter size={20} className="mr-2" />
-                <span>@smartcity</span>
-              </a>
-              <a href="https://facebook.com/SmartCity" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-200 hover:text-white transition duration-300">
-                <Facebook size={20} className="mr-2" />
-                <span>SmartCity</span>
+              <a href="https://github.com/Rizki-Fik1" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-200 hover:text-white transition duration-300">
+                <Github size={20} className="mr-2" />
+                <span>Rizki-Fik1</span>
               </a>
             </div>
           </div>

@@ -89,7 +89,7 @@ const ChallengesPage = () => {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-4 text-gray-800 text-center">Smart City Challenges</h1>
         
-        <div className="mb-8 text-gray-700 leading-relaxed text-center px-20 text-lg mt-10">
+        <div className="mb-8 text-gray-700 leading-relaxed text-center md:px-20 text-base md:text-lg mt-10">
           <p>To achieve an optimal Smart City, several significant challenges must be addressed and overcome. 
           The transformation towards a smart city requires a holistic approach that considers various aspects, 
           from technological infrastructure to community readiness. Each challenge requires appropriate and 
@@ -97,7 +97,7 @@ const ChallengesPage = () => {
           for all stakeholders.</p>
         </div>
         
-        {/* Challenge Cards Grid */}
+        {/* Challenges Cards*/}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {challenges.map((challenge) => (
             <Card key={challenge.id} className="overflow-hidden">

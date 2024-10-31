@@ -120,14 +120,6 @@ const SmartCityPage = () => {
     }
   ];
 
-  const createTechPairs = () => {
-    const pairs = [];
-    for (let i = 0; i < technologies.length; i += 3) {
-      pairs.push(technologies.slice(i, i + 3));
-    }
-    return pairs;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-400 to-indigo-200">
       {/* Definition Section */}
@@ -166,63 +158,61 @@ const SmartCityPage = () => {
           </h2>
           <p className="text-center text-xl text-gray-300 max-w-3xl mx-auto mb-12">Click on any technology to explore details</p>
 
-          {/* Technology Cards with Inline Details */}
+          {/* Cards with Scrollable */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {createTechPairs().map((row, rowIndex) => (
-              <React.Fragment key={rowIndex}>
-                {row.map((tech, index) => {
-                  const actualIndex = rowIndex * 3 + index;
-                  return (
-                    <div key={actualIndex} className="space-y-4">
-                      {/* Card */}
-                      <div 
-                        onClick={() => setSelectedTech(actualIndex === selectedTech ? null : actualIndex)}
-                        className={`bg-white rounded-xl p-6 cursor-pointer transition-all duration-300 ${
-                          selectedTech === actualIndex ? 'ring-2 ring-indigo-500 shadow-lg' : 'hover:shadow-md'
-                        }`}
-                      >
-                        <div className="flex flex-col items-center text-center">
-                          {tech.icon}
-                          <h3 className="text-xl font-semibold mt-4">{tech.title}</h3>
-                          <p className="text-gray-600 text-sm mt-2">{tech.description}</p>
-                          <ChevronDown className={`w-6 h-6 mt-4 text-indigo-500 transition-transform duration-300 ${
-                            selectedTech === actualIndex ? 'rotate-180' : ''
-                          }`} />
-                        </div>
-                      </div>
+            {technologies.map((tech, index) => (
+              <div key={index} className="space-y-4">
+                {/* Card */}
+                <div 
+                  onClick={() => setSelectedTech(index === selectedTech ? null : index)}
+                  className={`bg-white rounded-xl p-6 cursor-pointer transition-all duration-300 ${
+                    selectedTech === index ? 'ring-2 ring-indigo-500 shadow-lg' : 'hover:shadow-md'
+                  }`}
+                >
+                  <div className="flex flex-col items-center text-center">
+                    {tech.icon}
+                    <h3 className="text-xl font-semibold mt-4">{tech.title}</h3>
+                    <p className="text-gray-600 text-sm mt-2">{tech.description}</p>
+                    <ChevronDown className={`w-6 h-6 mt-4 text-indigo-500 transition-transform duration-300 ${
+                      selectedTech === index ? 'rotate-180' : ''
+                    }`} />
+                  </div>
+                </div>
 
-                      {/* Expanded Details */}
-                      <div className={`transition-all duration-500 overflow-hidden ${
-                        selectedTech === actualIndex ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}>
-                        <div className="bg-white rounded-xl p-8 shadow-lg">
-                          {/* Header */}
-                          <div className="flex items-center mb-6">
-                            {tech.icon}
-                            <h3 className="text-2xl font-semibold ml-4">{tech.title}</h3>
-                          </div>
-                          
-                          {/* Long Description */}
-                          <p className="text-gray-700 mb-8 leading-relaxed">
-                            {tech.longDescription}
-                          </p>
-
-                          {/* Key Features */}
-                          <h4 className="text-xl font-semibold mb-4">Key Features</h4>
-                          <div className="grid sm:grid-cols-2 gap-4">
-                            {tech.details.map((detail, idx) => (
-                              <div key={idx} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                                <ChevronRight className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-700">{detail}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                {/* Expanded Details with Scroll */}
+                <div className={`transition-all duration-500 overflow-hidden ${
+                  selectedTech === index ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="bg-white rounded-xl shadow-lg overflow-y-auto max-h-[60vh] sm:max-h-[70vh]">
+                    {/* Sticky Header */}
+                    <div className="sticky top-0 bg-white p-6 border-b border-gray-100 shadow-sm">
+                      <div className="flex items-center">
+                        {tech.icon}
+                        <h3 className="text-xl sm:text-2xl font-semibold ml-4">{tech.title}</h3>
                       </div>
                     </div>
-                  );
-                })}
-              </React.Fragment>
+
+                    {/* Scrollable Content */}
+                    <div className="p-6">
+                      {/* Long Description */}
+                      <p className="text-gray-700 mb-8 leading-relaxed text-sm sm:text-base">
+                        {tech.longDescription}
+                      </p>
+
+                      {/* Key Features */}
+                      <h4 className="text-lg sm:text-xl font-semibold mb-4">Key Features</h4>
+                      <div className="grid gap-4">
+                        {tech.details.map((detail, idx) => (
+                          <div key={idx} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+                            <ChevronRight className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700 text-sm sm:text-base">{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -52,7 +52,7 @@ const FutureProspectPage = () => {
         description: "Buildings with automation technology for security, energy management and optimal comfort for occupants.",
         image: Smart,
         longDescription: "Smart Buildings use advanced technologies such as sensors, IoT, and AI to manage various aspects of building operations automatically and in an integrated manner. This system allows for control of energy efficiency, automatic maintenance, security, and occupant comfort.",
-        LongTermPrediction: "In the future, autonomous transportation could reduce accidents by up to 80%, significantly reduce carbon emissions, and make transportation faster and cheaper, reducing dependence on private vehicles."
+        LongTermPrediction: "By 2040, smart buildings will be the norm in urban development, achieving energy efficiency of up to 90%. These buildings can reduce carbon emissions, reduce operating costs, and create a safer and more comfortable living environment for their occupants."
     },
     {
         id: 6,
@@ -60,7 +60,7 @@ const FutureProspectPage = () => {
         description: "Bioengineering includes genetic engineering of plants and other green technologies to improve air quality and environmental management in cities.",
         image: Bio,
         longDescription: "Bioengineering in the context of smart cities refers to the application of bioengineering technologies to address environmental and health challenges in cities. This technology includes everything from plants modified to absorb pollution to biologically based building materials that can repair themselves.",
-        LongTermPrediction: "In the next 30 years, bioengineering can make a major contribution to creating sustainable cities, with healthier environments, improved air and water quality, and the ability to repair urban ecosystems independently. Bioengineering will enable cities to utilize natural resources without destroying existing ecosystems."
+        LongTermPrediction: "In the next 30 years, biotechnology can make a major contribution to creating sustainable cities, healthier environments, better air and water quality, and the ability to repair urban ecosystems independently. Biotechnology will allow cities to utilize natural resources without destroying existing ecosystems."
     },
   ];
 
@@ -92,7 +92,7 @@ const FutureProspectPage = () => {
         </div>
       </section>
 
-      {/* Technology Cards Grid */}
+      {/* Technology Cards */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {technologies.map((tech) => (
@@ -119,7 +119,7 @@ const FutureProspectPage = () => {
                       <p className="text-gray-300 mb-4">{tech.longDescription}</p>
                       <div className="bg-white/5 rounded-lg p-4">
                         <h4 className="text-white font-semibold mb-2">Long Term Prediction</h4>
-                        <p className="text-gray-300">{tech.LongTermPrediction}</p>
+                        <p className="text-gray-300 text-sm md:text-md">{tech.LongTermPrediction}</p>
                       </div>
                     </div>
                   </div>

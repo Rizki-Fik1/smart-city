@@ -5,11 +5,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      paths: {
-        '@':'./src',
-      }, 
+
     },
   },
   plugins: [],
-}
-
+};

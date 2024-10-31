@@ -80,13 +80,13 @@ const Navbar = () => {
         const scrollToSection = (id) => {
             const element = document.getElementById(id);
             if (element) {
-                // Getting the element's position relative to the viewport
+      
                 const elementPosition = element.getBoundingClientRect().top;
-                // Adding current scroll position to get the absolute position
+
                 const offsetPosition = elementPosition + window.pageYOffset;
     
                 window.scrollTo({
-                    top: offsetPosition - 80, // Adjust for navbar height
+                    top: offsetPosition - 80,
                     behavior: 'smooth'
                 });
             }
@@ -103,7 +103,7 @@ const Navbar = () => {
                     border border-white/20 bg-gradient-to-r from-gray-900/90 to-gray-800/90
                     transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]`}
                 >
-                    {/* Mobile Menu Button */}
+                    {/* Hamburger Button */}
                     <button 
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden absolute right-4 top-4 text-white z-50 hover:text-blue-400 transition-colors"
@@ -111,7 +111,7 @@ const Navbar = () => {
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
 
-                    {/* Animated Circuit Board Pattern */}
+                    {/* Animated Circuit Board */}
                     <div className="absolute inset-0 opacity-10">
                         <div className="absolute inset-0 animate-pulse">
                             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />

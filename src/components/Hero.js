@@ -31,7 +31,7 @@ const HeroSection = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Video Background with Enhanced Overlay */}
+      {/* Video Background*/}
       <div className="absolute inset-0 z-0">
         <video 
           autoPlay 
@@ -56,19 +56,18 @@ const HeroSection = () => {
       <section className="relative text-white z-20 min-h-screen flex flex-col justify-center items-center">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="text-center space-y-8">
-            {/* Main Title with Glowing Effect */}
+            {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 animate-pulse">
                 {displayText}
               </span>
             </h1>
 
-            {/* Subtitle with Responsive Padding */}
             <p className="mt-6 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 leading-relaxed text-white/90 font-semibold">
               Experience the future of urban living where technology and sustainability meet. Smart City integrates cutting-edge innovations with sustainable solutions to create a more efficient, environmentally conscious, and livable urban environment.
             </p>
 
-            {/* Enhanced Single Button with Advanced Effects */}
+            {/* Enhanced Single Button */}
             <div className="mt-12 flex justify-center">
               <button className="group relative inline-flex items-center justify-center mt-14">
                 {/* Outer glow effect */}
@@ -97,7 +96,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* Add custom keyframes animation for gradient and sparkle effects */}
+      {/* custom keyframes animation */}
       <style jsx>{`
         @keyframes gradient-xy {
           0%, 100% {

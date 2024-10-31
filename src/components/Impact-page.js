@@ -38,7 +38,7 @@ const Timeline = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-indigo-400 to-indigo-600 py-12 relative overflow-hidden">
-      {/* Animated background patterns */}
+      {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="grid grid-cols-12 gap-4 h-full w-full rotate-12 scale-150">
@@ -76,12 +76,12 @@ const Timeline = () => {
                         <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <CardTitle className="text-indigo-600 group-hover:text-indigo-700 transition-colors">
+                        <CardTitle className="text-indigo-600 group-hover:text-indigo-700 transition-colors text-md md:text-xl">
                           {item.title}
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700 group-hover:text-gray-900 transition-colors">
+                        <p className="text-gray-700 group-hover:text-gray-900 transition-colors md:p-0 text-sm md:text-xl">
                           {item.content}
                         </p>
                       </CardContent>
@@ -110,12 +110,12 @@ const Timeline = () => {
                         <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <CardTitle className="text-indigo-600 group-hover:text-indigo-700 transition-colors">
+                        <CardTitle className="text-indigo-600 group-hover:text-indigo-700 transition-colors text-md md:text-xl">
                           {item.title}
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700 group-hover:text-gray-900 transition-colors">
+                        <p className="text-gray-700 group-hover:text-gray-900 transition-colors md:p-0 text-sm md:text-xl">
                           {item.content}
                         </p>
                       </CardContent>
@@ -146,7 +146,6 @@ const Timeline = () => {
 
 export default Timeline;
 
-// Add these additional styles to your CSS or Tailwind config
 const styles = {
   '.animate-fade-in': {
     animation: 'fadeIn 1s ease-in-out'
